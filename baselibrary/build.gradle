@@ -46,4 +46,7 @@ dependencies {
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
     //系统提供的底部菜单栏
     compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    //    butterknife
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

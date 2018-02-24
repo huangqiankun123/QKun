@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -16,21 +17,29 @@ import com.qiankun.qkun.main.fragment.TwoFragment;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
 
+    @BindView(R.id.fl_content)
+    FrameLayout mFlContent;
+    @BindView(R.id.main_bottom)
+    BottomNavigationBar bottomNavigationBar;
     private ArrayList<Fragment> fragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         initBottomBar();
     }
 
     private void initBottomBar() {
-        BottomNavigationBar bottomNavigationBar = findViewById(R.id.main_bottom);
+//        BottomNavigationBar bottomNavigationBar = findViewById(R.id.main_bottom);
         //设置模式（MODE_DEFAULT:如果Item的个数<=3就会使用MODE_FIXED模式，否则使用MODE_SHIFTING模式。MODE_FIXED 是填充模式，未选中的Item会显示文字，没有移位动画。MODE_SHIFTING:
         //移位模式，未选中的Item不会显示文字，选中的会显示文字。在切换的时候会有一个像移位的动画）
         bottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
