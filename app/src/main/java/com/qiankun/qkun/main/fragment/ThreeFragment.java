@@ -1,13 +1,18 @@
 package com.qiankun.qkun.main.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.kun.qian.baselibrary.base.BaseFragment;
 import com.qiankun.qkun.R;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 /**
@@ -17,6 +22,10 @@ import com.qiankun.qkun.R;
 public class ThreeFragment extends BaseFragment {
 
     public static final String ARGUMENT = "three";
+    @BindView(R.id.recycler_view)
+    RecyclerView mRecyclerView;
+    @BindView(R.id.refresh_layout)
+    SmartRefreshLayout mRefreshLayout;
 
     public static ThreeFragment newInstance(String argument) {
         Bundle bundle = new Bundle();
@@ -26,10 +35,15 @@ public class ThreeFragment extends BaseFragment {
         return threeFragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = LayoutInflater.from(mContext).inflate(R.layout.fragment_three, container, false);
-        return rootView;
+    protected int getLayoutId() {
+        return R.layout.fragment_three;
     }
+
+    @Override
+    protected void baseInit() {
+
+    }
+
+
 }

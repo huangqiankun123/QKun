@@ -48,12 +48,15 @@ public class OneFragment extends BaseFragment {
         return oneFragment;
     }
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = LayoutInflater.from(mContext).inflate(R.layout.fragment_one, container, false);
+    protected void baseInit() {
         initdata();
-        return rootView;
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_one;
     }
 
     private void initdata() {

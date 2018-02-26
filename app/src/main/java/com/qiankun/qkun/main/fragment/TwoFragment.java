@@ -26,10 +26,14 @@ public class TwoFragment extends BaseFragment {
         return twoFragment;
     }
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = LayoutInflater.from(mContext).inflate(R.layout.fragment_two, container, false);
-        return rootView;
+    protected void baseInit() {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_two;
     }
 }

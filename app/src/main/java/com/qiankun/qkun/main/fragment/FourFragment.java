@@ -26,10 +26,14 @@ public class FourFragment extends BaseFragment {
         return fourFragment;
     }
 
-    @Nullable
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = LayoutInflater.from(mContext).inflate(R.layout.fragment_four, container, false);
-        return rootView;
+    protected void baseInit() {
+
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.fragment_four;
     }
 }

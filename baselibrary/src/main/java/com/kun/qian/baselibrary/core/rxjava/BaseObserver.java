@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
+import com.kun.qian.baselibrary.base.Constant;
 import com.kun.qian.baselibrary.base.MyApplication;
 import com.kun.qian.baselibrary.core.exception.ServerException;
 import com.kun.qian.baselibrary.core.response.BaseResponse;
@@ -83,7 +84,8 @@ public abstract class BaseObserver<T> implements Observer<BaseResponse<T>> {
             if (e.getMessage().equals("token失效，请重新登录")) {//token 失效 进入登录页面
                 try {
                     //com.hjy.sports.login.LoginActivity 进入登录界面
-                    Class cla = Class.forName("com.hjy.sports.login.LoginActivity");
+                    Constant.token = "";
+                    Class cla = Class.forName("com.qiankun.qkun.login.LoginActivity");
                     Context context = MyApplication.AppContext;
                     Bundle bundle = new Bundle();
                     bundle.putBoolean("untoken", true);
