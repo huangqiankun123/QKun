@@ -23,7 +23,7 @@ import butterknife.Unbinder;
  * Created by xcy on 2018/1/16.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
 
     protected BaseActivity mContext;
     private LinearLayout parentLinearLayout;
@@ -54,7 +54,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract void init();
 
+    @Override
+    public void onClick(View view) {
 
+    }
 
     private void initContentView(@LayoutRes int layoutResID) {
         ViewGroup viewGroup = (ViewGroup) findViewById(android.R.id.content);

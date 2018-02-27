@@ -26,6 +26,12 @@ public interface ApiService {
     @POST("sys/loginToApp")
     Observable<BaseResponse<LoginBean>> loginToApp(@FieldMap Map<String, Object> options);
 
+    /**
+     * 首页信息
+     */
+    @GET("student/getHome")
+    Observable<BaseResponse<HomeBean>> getHome(@QueryMap Map<String, Object> options);
+
 //    /**
 //     * 退出登录接口
 //     */
@@ -196,12 +202,6 @@ public interface ApiService {
 //    Observable<ResponseBody> downLoadFileSize(@Url String fileUrl);
 //
 //
-    /**
-     * 首页信息
-     */
-    @GET("student/getHome")
-    Observable<BaseResponse<HomeBean>> getHome(@QueryMap Map<String, Object> options);
-
 
 
 }

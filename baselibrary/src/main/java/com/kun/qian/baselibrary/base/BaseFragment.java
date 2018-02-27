@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatDelegate;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -70,14 +69,16 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         return mRootView;
     }
 
-    @Override
-    public void onClick(View v) {
 
-    }
 
     protected abstract int getLayoutId();
 
     protected abstract void baseInit();
+
+    @Override
+    public void onClick(View v) {
+
+    }
 
     @Override
     public void onDestroy() {
