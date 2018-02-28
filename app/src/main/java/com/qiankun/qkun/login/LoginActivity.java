@@ -28,6 +28,7 @@ import com.kun.qian.baselibrary.core.retrofit.RetrofitHelper;
 import com.kun.qian.baselibrary.core.rxjava.BaseObserver;
 import com.kun.qian.baselibrary.core.rxjava.RxSchedulers;
 import com.kun.qian.baselibrary.utils.ActivityUtils;
+import com.kun.qian.baselibrary.utils.CacheUtils;
 import com.kun.qian.baselibrary.utils.KeyboardUtils;
 import com.kun.qian.baselibrary.utils.SPUtils;
 import com.kun.qian.baselibrary.utils.ToastUtils;
@@ -218,6 +219,9 @@ public class LoginActivity extends BaseActivity {
                     public void accept(BaseResponse<LoginBean> loginBeanBaseResponse) throws Exception {
                         //做一些缓存等处理
                         Constant.token = loginBeanBaseResponse.getRows().getToken();
+                        LoginBean.StudentBean studentBean = loginBeanBaseResponse.getRows().getStudent();
+                        CacheUtils.getInstance().put("studentBean", studentBean);
+                        Constant.studentID = loginBeanBaseResponse.getRows().getStudent().getStudentid();
                     }
                 }).observeOn(Schedulers.io())
                 .flatMap(new Function<BaseResponse<LoginBean>, ObservableSource<BaseResponse<HomeBean>>>() {

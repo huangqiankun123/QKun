@@ -2,6 +2,7 @@ package com.kun.qian.baselibrary.api;
 
 import com.kun.qian.baselibrary.bean.HomeBean;
 import com.kun.qian.baselibrary.bean.LoginBean;
+import com.kun.qian.baselibrary.bean.SocialAllListBean;
 import com.kun.qian.baselibrary.core.response.BaseResponse;
 
 import java.util.Map;
@@ -106,14 +107,14 @@ public interface ApiService {
 //                                                  @Part("type") RequestBody type,
 //                                                  @Part List<MultipartBody.Part> files);
 //
-//    /**
-//     * 所有帖子列表
-//     */
-//    @FormUrlEncoded
-//    @Headers({"url_name:user"})
-//    @POST("social/listAllByApp")
-//    Observable<BeanModule<SocialAllListBean>> getlistAllByApp(@FieldMap Map<String, Object> options);
-//
+
+    /**
+     * 所有帖子列表
+     */
+    @FormUrlEncoded
+    @POST("social/listAllByApp")
+    Observable<BaseResponse<SocialAllListBean>> getlistAllByApp(@FieldMap Map<String, Object> options);
+
 //    /**
 //     * 我的发帖列表
 //     */

@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <style name="AppTheme.FullScreen" parent="AppTheme">
+            <item name="android:windowActionBar">false</item>
+            <item name="android:windowFullscreen">true</item>
+        </style>
     </style>
 
 </resources>
