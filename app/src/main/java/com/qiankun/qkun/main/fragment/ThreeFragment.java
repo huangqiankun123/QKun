@@ -82,10 +82,18 @@ public class ThreeFragment extends BaseFragment {
         initRecycler(studentBean);
 
         getlistAllByApp(1);
-
-
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mRefreshLayout.isRefreshing()) {
+            mRefreshLayout.finishRefresh();
+        }
+        if (mRefreshLayout.isLoading()) {
+            mRefreshLayout.finishLoadmore();
+        }
+    }
 
     private void initRefresh() {
         mRefreshLayout.setRefreshHeader(new ClassicsHeader(mContext));

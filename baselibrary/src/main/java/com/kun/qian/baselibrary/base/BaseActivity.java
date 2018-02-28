@@ -91,6 +91,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         return (Toolbar) findViewById(R.id.toolbar);
     }
 
+
+
     private void setBackIcon(){
         if (null != getToolbar() && isShowBacking()) {
             getToolbar().setNavigationIcon(R.drawable.ic_vector_back);
@@ -129,6 +131,8 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             setSupportActionBar(getToolbar());
         }
     }
+
+
 
     public boolean isSaveInstanceState = false;
 

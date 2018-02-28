@@ -3,6 +3,7 @@ package com.qiankun.qkun.login;
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -85,7 +86,14 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initToolBar() {
-        getToolbar().setVisibility(View.GONE);
+        setToolBarTitle("登录");
+//        getSubTitle().setText("入入");
+
+    }
+
+    @Override
+    protected boolean isShowBacking() {
+        return true;
     }
 
     @Override
