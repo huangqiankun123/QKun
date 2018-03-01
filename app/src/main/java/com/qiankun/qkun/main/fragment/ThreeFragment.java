@@ -23,7 +23,6 @@ import com.kun.qian.baselibrary.core.retrofit.RetrofitHelper;
 import com.kun.qian.baselibrary.core.rxjava.BaseObserver;
 import com.kun.qian.baselibrary.core.rxjava.RxSchedulers;
 import com.kun.qian.baselibrary.utils.CacheUtils;
-import com.kun.qian.baselibrary.utils.ToastUtils;
 import com.kun.qian.baselibrary.utils.imageload.ImgLoadUtils;
 import com.qiankun.qkun.R;
 import com.qiankun.qkun.three.SocialAdapter;
@@ -52,8 +51,10 @@ public class ThreeFragment extends BaseFragment {
     RecyclerView mRecyclerView;
     @BindView(R.id.refresh_layout)
     SmartRefreshLayout mRefreshLayout;
-    @BindView(R.id.toolbar)
+
+    @BindView(R.id.tool_bar)
     Toolbar mToolbar;
+
     private SocialAdapter mAdapter;
     private int mPageNo;
 
@@ -73,7 +74,7 @@ public class ThreeFragment extends BaseFragment {
     @Override
     protected void baseInit() {
         ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
-        mToolbar.setTitle("校园圈");
+        mToolbar.inflateMenu(R.menu.simple_tool_bar_menu);
 
         initRefresh();
 
@@ -158,9 +159,18 @@ public class ThreeFragment extends BaseFragment {
                                 } else {
                                     mAdapter.setNewData(rows);
                                 }
+                            } else {
+                                if (mRefreshLayout.isRefreshing()) {
+                                    mRefreshLayout.finishRefresh();
+                                }
+                                if (mRefreshLayout.isLoading()) {
+                                    mRefreshLayout.finishLoadmore();
+                                }
                             }
                         }
                     }
                 });
     }
+
+
 }

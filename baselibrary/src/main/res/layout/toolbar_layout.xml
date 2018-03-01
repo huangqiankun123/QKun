@@ -7,7 +7,7 @@
     android:background="@color/colorPrimary"
     android:minHeight="?attr/actionBarSize">
 
-    <!--自定义toolbar的title 和subtitle -->
+<!--    &lt;!&ndash;自定义toolbar的title 和subtitle &ndash;&gt;
     <TextView
         android:id="@+id/toolbar_subtitle"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
@@ -29,5 +29,5 @@
         android:text="title"
         android:scrollHorizontally="true"
         android:textColor="@color/white"
-        android:layout_gravity="center" />
+        android:layout_gravity="center" />-->
 </android.support.v7.widget.Toolbar>

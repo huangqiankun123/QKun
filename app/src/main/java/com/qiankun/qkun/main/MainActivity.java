@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -37,10 +36,7 @@ public class MainActivity extends BaseActivity implements BottomNavigationBar.On
         return R.layout.activity_main;
     }
 
-    @Override
-    protected void initToolBar() {
-        getToolbar().setVisibility(View.GONE);
-    }
+
 
     @Override
     protected void init() {

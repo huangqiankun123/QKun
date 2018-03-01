@@ -2,12 +2,10 @@ package com.qiankun.qkun.login;
 
 import android.content.Intent;
 import android.text.TextUtils;
-import android.view.View;
 
 import com.kun.qian.baselibrary.base.BaseActivity;
 import com.kun.qian.baselibrary.base.Constant;
 import com.kun.qian.baselibrary.utils.ActivityUtils;
-import com.kun.qian.baselibrary.utils.BarUtils;
 import com.qiankun.qkun.R;
 import com.qiankun.qkun.main.MainActivity;
 
@@ -30,11 +28,7 @@ public class SplashActivity extends BaseActivity {
         return R.layout.activity_splash;
     }
 
-    @Override
-    protected void initToolBar() {
-        BarUtils.setStatusBarVisibility(SplashActivity.this, false);
-        getToolbar().setVisibility(View.GONE);
-    }
+
 
     @Override
     protected void init() {
